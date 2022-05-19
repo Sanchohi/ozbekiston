@@ -1,0 +1,62 @@
+{% extends 'viloyat/viloyat.html' %}
+
+{% block content %}
+{% load static %}
+<div class="lyuboy" style="display: flex;flex-direction: row;justify-content:flex-start;align-items: flex-start;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width:25%; height: 100%; >
+    <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Tumanlari:</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto" style="overflow-y: scroll;">
+      <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <!--a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Home
+        </a-->
+      </li>
+      <li>
+        {% for i in rayon %}
+        
+        <a href="{% url 'oqish' i.pk %}" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          {{i.name}}
+        </a>
+        
+        {% endfor %}
+      </li>
+      
+    </ul>
+    
+    <hr>
+
+   </div>
+   <div class="col-md-8 col-lg-6 vstack gap-4" style="width:75%; display: flex; flex-direction: row;justify-content: center; align-items: center; padding-top: 10px;">
+        <!-- Story START -->
+      {% for i in malum %}
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            {% if i.img %}
+            <img src="{{i.img.url}}" class="img-fluid rounded-start" alt="...">
+            {% endif %}
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{i.name}}</h5>
+              <p class="card-text">{{i.content}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+</div>    
+    </div>
+</div> 
+<div>
+
+
+{% endblock %}

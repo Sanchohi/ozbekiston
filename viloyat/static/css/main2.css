@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url('../Fonts/static/Montserrat-Light.ttf') format(truetype);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat-Light", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 30vh;
+  background-image: url(../image/bayroq.jpg);
+  background-size:100% 100%;
+  background-position: top;
+}
+
+.Logo {
+color: #fff;
+letter-spacing: 4px;
+font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 45%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a {
+  color: rgb(14, 0, 0);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+table{
+  margin: 30px;
+}

@@ -1,0 +1,21 @@
+{% extends 'viloyat/viloyat.html' %}
+{% block title%}
+Tumanlar
+{% endblock %}
+{% block content %}
+{% load static %}
+{% for i in rayon %}
+<div class="card text-center">
+  <div class="card-header">
+    {{i.cat}} tumanlari:
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.content}}</p>
+    
+    <a href="{% url 'viloyat' %}" class="btn btn-primary">Ortga</a>
+  </div>
+  
+</div>
+{% endfor %}
+{% endblock %}
